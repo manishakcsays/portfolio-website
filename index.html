@@ -10,17 +10,16 @@
   />
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-alt: #111729;
-      --card: #151c30;
-      --accent: #4fa3ff;
-      --accent-soft: rgba(79, 163, 255, 0.1);
-      --text: #f5f7ff;
-      --muted: #a8b2d1;
-      --border: #222c44;
+      --bg: #f5f6fb;
+      --bg-alt: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: rgba(37, 99, 235, 0.08);
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
       --radius-lg: 18px;
       --radius-xl: 24px;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.10);
     }
 
     * {
@@ -32,9 +31,8 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
-      background: radial-gradient(circle at top, #17233f 0, #050814 55%);
-      color: var(--text);
-      line-height: 1.6;
+      background: radial-gradient(circle at top, #e0edff 0, #f9fafb 52%);
+      color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
 
@@ -48,248 +46,180 @@
     }
 
     .page {
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 32px 20px 64px;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 32px;
-      gap: 16px;
-    }
-
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    nav {
-      display: flex;
-      gap: 18px;
-      font-size: 0.9rem;
-    }
-
-    nav a {
-      color: var(--muted);
-      padding-bottom: 4px;
-      border-bottom: 1px solid transparent;
-    }
-
-    nav a:hover {
-      color: var(--text);
-      border-color: var(--accent-soft);
-    }
-
-    main {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    /* HERO */
-
-    .hero {
+      padding: 32px 18px 48px;
       display: grid;
-      grid-template-columns: 3fr 2.2fr;
-      gap: 28px;
-      align-items: stretch;
+      grid-template-columns: 290px minmax(0, 1fr);
+      gap: 26px;
+      align-items: flex-start;
     }
 
-    .hero-left {
-      background: linear-gradient(135deg, #151c30, #141b2f);
+    /* LEFT SIDEBAR */
+
+    .sidebar {
+      background: var(--bg-alt);
       border-radius: var(--radius-xl);
-      padding: 28px 26px;
+      padding: 22px 20px 20px;
       box-shadow: var(--shadow-soft);
       border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
+      position: sticky;
+      top: 24px;
+      align-self: flex-start;
     }
 
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 11px;
-      border-radius: 999px;
-      background: rgba(20, 160, 255, 0.06);
-      border: 1px solid rgba(79, 163, 255, 0.3);
-      color: var(--muted);
-      font-size: 0.75rem;
-      margin-bottom: 14px;
-    }
-
-    .hero-tag span.dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #30ffb2;
-      box-shadow: 0 0 10px #30ffb2;
-    }
-
-    .hero-title {
-      font-size: 1.9rem;
+    .name {
+      font-size: 1.45rem;
       font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 2px;
+    }
+
+    .role {
+      font-size: 0.95rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .location {
+      font-size: 0.85rem;
+      color: var(--text-muted);
       margin-bottom: 6px;
     }
 
-    .hero-subtitle {
-      color: var(--muted);
-      font-size: 0.97rem;
-      margin-bottom: 18px;
-    }
-
-    .hero-highlight {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 22px;
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 9px 17px;
-      font-size: 0.9rem;
-      border: 1px solid transparent;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: transform 0.12s ease, box-shadow 0.12s ease,
-        background 0.12s ease, border-color 0.12s ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #4fa3ff, #67d5ff);
-      color: #050814;
-      box-shadow: 0 10px 22px rgba(79, 163, 255, 0.45);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(79, 163, 255, 0.55);
-    }
-
-    .btn-ghost {
-      background: rgba(10, 15, 30, 0.6);
-      color: var(--muted);
-      border-color: rgba(255, 255, 255, 0.08);
-    }
-
-    .btn-ghost:hover {
-      border-color: rgba(79, 163, 255, 0.6);
-      color: var(--text);
-      transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .hero-meta-item {
+    .availability {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(9, 13, 27, 0.9);
-      border: 1px solid var(--border);
-    }
-
-    .hero-blur {
-      position: absolute;
-      inset: auto -40px -80px auto;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle at center, #4fa3ff 0, transparent 60%);
-      opacity: 0.18;
-      pointer-events: none;
-    }
-
-    /* HERO RIGHT */
-
-    .hero-right {
-      display: grid;
-      grid-template-rows: auto auto;
-      gap: 14px;
-    }
-
-    .hero-card {
-      background: linear-gradient(135deg, #151c30, #12192a);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 16px 16px 14px;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    .hero-card-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--text);
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .hero-card-tag {
-      font-size: 0.7rem;
-      padding: 3px 8px;
+      padding: 4px 10px;
       border-radius: 999px;
       background: var(--accent-soft);
       color: var(--accent);
-      border: 1px solid rgba(79, 163, 255, 0.3);
+      font-size: 0.78rem;
+      margin-bottom: 14px;
     }
 
-    .hero-pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 10px;
-    }
-
-    .pill {
-      padding: 3px 9px;
+    .availability-dot {
+      width: 7px;
+      height: 7px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(7, 11, 23, 0.8);
-      font-size: 0.73rem;
-      color: var(--muted);
+      background: #16a34a;
+      box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15);
     }
 
-    /* SECTION SHARED */
+    .sidebar-section-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-top: 16px;
+      margin-bottom: 6px;
+    }
+
+    .sidebar-list {
+      list-style: none;
+      font-size: 0.87rem;
+      color: var(--text-main);
+    }
+
+    .sidebar-list li + li {
+      margin-top: 4px;
+    }
+
+    .sidebar-link {
+      font-size: 0.86rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-main);
+    }
+
+    .sidebar-link span.icon {
+      font-size: 1rem;
+    }
+
+    .nav-links {
+      margin-top: 16px;
+      display: grid;
+      gap: 6px;
+      font-size: 0.86rem;
+    }
+
+    .nav-link {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      cursor: pointer;
+      background: transparent;
+      transition: background 0.12s ease, border-color 0.12s ease,
+        color 0.12s ease, transform 0.08s ease;
+    }
+
+    .nav-link:hover {
+      background: #eff4ff;
+      border-color: #d0e2ff;
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    .nav-link span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #cbd5f5;
+    }
+
+    .btn-main {
+      width: 100%;
+      margin-top: 16px;
+      border-radius: 999px;
+      padding: 9px 12px;
+      border: none;
+      background: linear-gradient(135deg, #2563eb, #38bdf8);
+      color: white;
+      font-size: 0.92rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 14px 32px rgba(37, 99, 235, 0.35);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .btn-main:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.42);
+    }
+
+    /* RIGHT CONTENT */
+
+    .content {
+      display: grid;
+      gap: 18px;
+    }
 
     section {
-      background: linear-gradient(135deg, #111729, #0d1321);
+      background: var(--bg-alt);
       border-radius: var(--radius-xl);
+      padding: 20px 20px 18px;
       border: 1px solid var(--border);
-      padding: 22px 22px 20px;
       box-shadow: var(--shadow-soft);
     }
 
     .section-header {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 14px;
+      align-items: flex-end;
       gap: 10px;
+      margin-bottom: 10px;
     }
 
     .section-title {
@@ -298,21 +228,15 @@
     }
 
     .section-subtitle {
-      font-size: 0.8rem;
-      color: var(--muted);
+      font-size: 0.82rem;
+      color: var(--text-muted);
     }
 
-    /* ABOUT + SKILLS */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: 20px;
-    }
+    /* ABOUT */
 
     .about-text {
-      font-size: 0.9rem;
-      color: var(--muted);
+      font-size: 0.92rem;
+      color: var(--text-muted);
     }
 
     .about-text p + p {
@@ -323,28 +247,32 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     .chip {
-      font-size: 0.8rem;
-      padding: 5px 10px;
+      padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(79, 163, 255, 0.08);
-      border: 1px solid rgba(79, 163, 255, 0.5);
-      color: var(--accent);
+      background: #f1f5f9;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border: 1px solid #e2e8f0;
     }
 
-    .skills-list {
+    /* SKILLS */
+
+    .skills-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-      font-size: 0.85rem;
-      color: var(--muted);
+      gap: 10px 18px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-top: 8px;
     }
 
-    .skills-list strong {
-      color: var(--text);
+    .skills-grid strong {
+      font-size: 0.9rem;
+      color: var(--text-main);
       font-weight: 600;
     }
 
@@ -352,38 +280,37 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
-      font-size: 0.85rem;
+      font-size: 0.86rem;
     }
 
     .project-card {
-      background: linear-gradient(145deg, #151c30, #131a2c);
       border-radius: 16px;
-      border: 1px solid var(--border);
-      padding: 14px 13px 12px;
+      border: 1px solid #e2e8f0;
+      padding: 12px 12px 10px;
+      background: #f9fafb;
       display: flex;
       flex-direction: column;
       gap: 6px;
     }
 
     .project-title {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 600;
     }
 
     .project-desc {
-      color: var(--muted);
+      color: var(--text-muted);
     }
 
     .project-meta {
-      margin-top: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-top: 8px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
     }
 
     .project-tags {
@@ -393,66 +320,58 @@
     }
 
     .tag {
-      padding: 2px 8px;
+      padding: 2px 7px;
       border-radius: 999px;
-      background: rgba(7, 11, 24, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .project-link {
+      font-size: 0.8rem;
+      margin-top: 3px;
     }
 
     /* EXPERIENCE */
 
     .timeline {
       display: grid;
-      gap: 12px;
+      gap: 10px;
       font-size: 0.86rem;
     }
 
-    .timeline-item {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 12px;
-      align-items: start;
-    }
-
-    .timeline-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      border: 2px solid var(--accent);
-      margin-top: 6px;
-    }
-
-    .timeline-content {
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
-      padding-bottom: 8px;
+    .timeline-item + .timeline-item {
+      padding-top: 8px;
+      border-top: 1px dashed #e2e8f0;
     }
 
     .timeline-role {
       font-weight: 600;
-      color: var(--text);
+      font-size: 0.93rem;
     }
 
     .timeline-meta {
-      font-size: 0.78rem;
-      color: var(--muted);
+      font-size: 0.8rem;
+      color: var(--text-muted);
       margin-bottom: 4px;
     }
 
     .timeline-list {
       margin-left: 16px;
-      margin-top: 6px;
-      color: var(--muted);
+      margin-top: 4px;
+      color: var(--text-muted);
     }
 
-    .timeline-list li {
-      margin-bottom: 4px;
+    .timeline-list li + li {
+      margin-top: 4px;
     }
 
     /* CONTACT */
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 2.2fr 2fr;
+      grid-template-columns: 1.4fr 2fr;
       gap: 16px;
       font-size: 0.88rem;
     }
@@ -462,10 +381,10 @@
     }
 
     .contact-label {
-      font-size: 0.78rem;
-      color: var(--muted);
+      font-size: 0.8rem;
+      color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.09em;
     }
 
     .contact-value {
@@ -475,223 +394,193 @@
     .social-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 0.8rem;
     }
 
     .social-pill {
-      font-size: 0.8rem;
-      padding: 5px 11px;
+      padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(7, 11, 24, 0.9);
-      color: var(--muted);
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      color: var(--text-muted);
     }
 
     footer {
-      margin-top: 18px;
-      font-size: 0.78rem;
-      color: var(--muted);
+      grid-column: 1 / -1;
       text-align: center;
-      opacity: 0.8;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+      padding-bottom: 4px;
     }
 
     /* RESPONSIVE */
 
     @media (max-width: 900px) {
-      .hero {
+      .page {
         grid-template-columns: 1fr;
+        padding: 20px 12px 36px;
       }
 
-      .hero-right {
-        grid-template-columns: 1fr 1fr;
+      .sidebar {
+        position: static;
       }
+    }
 
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
+    @media (max-width: 640px) {
       .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
       }
 
       .contact-grid {
         grid-template-columns: 1fr;
       }
     }
-
-    @media (max-width: 640px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero-right {
-        grid-template-columns: 1fr;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .page {
-        padding: 20px 14px 48px;
-      }
-    }
   </style>
 </head>
 <body>
   <div class="page">
-    <header>
-      <div class="logo">MANISHA KC</div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="name">Manisha K.C</div>
+      <div class="role">Data & Business Analyst</div>
+      <div class="location">Moss Vale, NSW · Regional Australia</div>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero" id="top">
-        <div class="hero-left">
-          <div class="hero-tag">
-            <span class="dot"></span>
-            Open to Data / Business Analyst roles (Australia)
-          </div>
-          <h1 class="hero-title">Data & Business Analyst</h1>
-          <p class="hero-subtitle">
-            I’m <strong>Manisha K.C</strong>, a data-driven problem solver with a
-            Master’s in Data Science, based in regional NSW. I turn messy,
-            real-world data into clear dashboards, insights, and business
-            decisions – with experience across aged-care operations and
-            digital products.
-          </p>
+      <div class="availability">
+        <span class="availability-dot"></span>
+        Open to analyst roles (Australia)
+      </div>
 
-          <div class="hero-buttons">
-            <a href="#projects">
-              <button class="btn btn-primary">
-                View Selected Projects →
-              </button>
+      <div>
+        <div class="sidebar-section-title">Contact</div>
+        <ul class="sidebar-list">
+          <li>
+            <a class="sidebar-link" href="mailto:your.email@example.com">
+              <span class="icon">✉️</span>
+              <span>your.email@example.com</span>
             </a>
-            <a href="#contact">
-              <button class="btn btn-ghost">Contact Me</button>
+          </li>
+          <li>
+            <a
+              class="sidebar-link"
+              href="https://www.linkedin.com"
+              target="_blank"
+            >
+              <span class="icon">🔗</span>
+              <span>linkedin.com/in/your-profile</span>
             </a>
-          </div>
+          </li>
+          <li>
+            <a
+              class="sidebar-link"
+              href="https://github.com"
+              target="_blank"
+            >
+              <span class="icon">🐙</span>
+              <span>github.com/your-github</span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-          <div class="hero-meta">
-            <div class="hero-meta-item">📍 Moss Vale, NSW (Regional)</div>
-            <div class="hero-meta-item">
-              🎓 Master of Data Science – CDU
-            </div>
-            <div class="hero-meta-item">🧠 SQL · Power BI · Python</div>
-          </div>
-
-          <div class="hero-blur"></div>
+      <div>
+        <div class="sidebar-section-title">Sections</div>
+        <div class="nav-links">
+          <button class="nav-link" onclick="scrollToId('about')">
+            <span class="dot"></span> About
+          </button>
+          <button class="nav-link" onclick="scrollToId('skills')">
+            <span class="dot"></span> Skills
+          </button>
+          <button class="nav-link" onclick="scrollToId('projects')">
+            <span class="dot"></span> Projects
+          </button>
+          <button class="nav-link" onclick="scrollToId('experience')">
+            <span class="dot"></span> Experience
+          </button>
+          <button class="nav-link" onclick="scrollToId('contact')">
+            <span class="dot"></span> Contact
+          </button>
         </div>
+      </div>
 
-        <div class="hero-right">
-          <div class="hero-card">
-            <div class="hero-card-title">
-              <span>Snapshot</span>
-              <span class="hero-card-tag">Analytics Profile</span>
-            </div>
-            <p>
-              I specialise in <span class="hero-highlight">data cleaning,
-              dashboarding, and business reporting</span>, with a strong
-              interest in workforce analytics and operational improvement
-              in sectors like aged-care and digital products.
-            </p>
-            <div class="hero-pill-row">
-              <span class="pill">SQL & Relational Databases</span>
-              <span class="pill">Power BI & Tableau</span>
-              <span class="pill">Python (Pandas, NumPy)</span>
-              <span class="pill">Stakeholder Communication</span>
-            </div>
-          </div>
+      <button class="btn-main" onclick="scrollToId('projects')">
+        View Selected Projects →
+      </button>
+    </aside>
 
-          <div class="hero-card">
-            <div class="hero-card-title">
-              <span>Recent Focus</span>
-              <span class="hero-card-tag">2024–2025</span>
-            </div>
-            <p>
-              Building end-to-end data projects: from gathering
-              requirements and preparing datasets, through to modelling,
-              visualisation, and presenting recommendations that non-technical
-              teams can act on.
-            </p>
-            <div class="hero-pill-row">
-              <span class="pill">Aged-Care Workforce Insights</span>
-              <span class="pill">Incident & Risk Modelling</span>
-              <span class="pill">Sales / KPI Dashboards</span>
-            </div>
+    <!-- MAIN CONTENT -->
+    <div class="content">
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="section-header">
+          <h2 class="section-title">About</h2>
+          <p class="section-subtitle">
+            A data-focused analyst with real operational experience.
+          </p>
+        </div>
+        <div class="about-text">
+          <p>
+            I’m a <strong>Data & Business Analyst</strong> with a
+            <strong>Master’s in Data Science (Charles Darwin University)</strong>,
+            based in regional NSW. I combine technical skills in SQL, Power BI,
+            and Python with hands-on experience in
+            <strong>aged-care operations</strong> and digital products.
+          </p>
+          <p>
+            I enjoy turning messy, real-world data into clear reports,
+            dashboards, and recommendations that help teams make better
+            decisions. I’m especially interested in workforce analytics,
+            operational efficiency, and improving resident or customer outcomes
+            through data.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Actively seeking Data / Business Analyst roles</span>
+            <span class="chip">Regional NSW based (491-friendly)</span>
           </div>
         </div>
       </section>
 
-      <!-- ABOUT & SKILLS -->
-      <section id="about">
+      <!-- SKILLS -->
+      <section id="skills">
         <div class="section-header">
-          <h2 class="section-title">About & Skills</h2>
+          <h2 class="section-title">Skills</h2>
           <p class="section-subtitle">
-            A blend of technical analytics and real-world operational experience.
+            Tools and capabilities I bring to an analyst role.
           </p>
         </div>
-
-        <div class="about-grid">
-          <div class="about-text">
-            <p>
-              I’m a <strong>Data Analyst / Business Analyst</strong> with a
-              Master’s in Data Science from
-              <strong>Charles Darwin University</strong>. I’ve worked in
-              <strong>aged-care environments</strong> and on
-              <strong>digital products</strong>, giving me a grounded view
-              of how data connects to people, processes, and decision-making.
-            </p>
-            <p>
-              My strengths are <strong>data cleaning, SQL reporting,
-              dashboard design, and translating stakeholder questions into
-              clear analysis and visuals</strong>. I’m especially interested
-              in improving workforce planning, operational efficiency, and
-              customer / resident outcomes through data.
-            </p>
-            <div class="chip-row">
-              <span class="chip">Actively seeking Data / Business Analyst roles</span>
-              <span class="chip">Based in Regional NSW (491-friendly)</span>
-            </div>
+        <div class="skills-grid">
+          <div>
+            <strong>Analytics & BI</strong><br />
+            SQL, Power BI, Tableau, Excel (Pivot Tables, Lookups, Cleaning)
           </div>
-
-          <div id="skills">
-            <div class="skills-list">
-              <div>
-                <strong>Analytics</strong><br />
-                SQL, Power BI, Tableau, Excel (Pivot Tables, Lookups)
-              </div>
-              <div>
-                <strong>Programming</strong><br />
-                Python (Pandas, NumPy, basic Scikit-Learn)
-              </div>
-              <div>
-                <strong>Business</strong><br />
-                Requirements gathering, process mapping, reporting,
-                documentation
-              </div>
-              <div>
-                <strong>Tools</strong><br />
-                GitHub, Jupyter, Jira / Confluence
-              </div>
-              <div>
-                <strong>Soft Skills</strong><br />
-                Communication, teamwork, stakeholder engagement, problem solving
-              </div>
-              <div>
-                <strong>Domains</strong><br />
-                Aged-care, operations, digital / web products
-              </div>
-            </div>
+          <div>
+            <strong>Programming</strong><br />
+            Python (Pandas, NumPy, basic Scikit-Learn), Jupyter
+          </div>
+          <div>
+            <strong>Business & Analysis</strong><br />
+            Requirements gathering, process mapping, reporting and documentation,
+            presenting insights to non-technical stakeholders
+          </div>
+          <div>
+            <strong>Tools</strong><br />
+            GitHub, Jira, Confluence, basic UI/UX collaboration
+          </div>
+          <div>
+            <strong>Soft Skills</strong><br />
+            Communication, teamwork, empathy, stakeholder engagement,
+            problem solving
+          </div>
+          <div>
+            <strong>Domains</strong><br />
+            Aged-care, operations, workforce planning, digital/Web3 products
           </div>
         </div>
       </section>
@@ -701,7 +590,8 @@
         <div class="section-header">
           <h2 class="section-title">Selected Projects</h2>
           <p class="section-subtitle">
-            End-to-end data projects that reflect real business questions.
+            A sample of the work I’ve done and the types of questions I like
+            to answer with data.
           </p>
         </div>
 
@@ -711,15 +601,20 @@
               Aged-Care Workforce Analytics Dashboard
             </h3>
             <p class="project-desc">
-              Built a Power BI dashboard exploring staff-to-resident ratios,
-              overtime, absenteeism, and cost trends to support more sustainable
-              rostering and staffing decisions in an aged-care setting.
+              Power BI dashboard exploring staff-to-resident ratios, overtime,
+              absenteeism, and cost trends. The goal is to support leaders with
+              more sustainable and transparent rostering decisions in an
+              aged-care environment.
             </p>
+            <!-- Optional link placeholder -->
+            <!-- <p class="project-link">
+              <a href="#" target="_blank">View dashboard →</a>
+            </p> -->
             <div class="project-meta">
               <div class="project-tags">
                 <span class="tag">Power BI</span>
                 <span class="tag">Workforce Analytics</span>
-                <span class="tag">Aged-Care</span>
+                <span class="tag">Aged-care</span>
               </div>
               <span>2024</span>
             </div>
@@ -730,30 +625,28 @@
               Resident Falls & Incident Risk Modelling
             </h3>
             <p class="project-desc">
-              Used Python to clean simulated resident data (age, mobility,
-              medications, history of falls) and trained a logistic regression
-              model to flag higher-risk residents, supporting proactive care
-              planning.
+              Cleaned and analysed simulated resident data (age, mobility,
+              medications, history) in Python and trained a logistic regression
+              model to flag higher-risk residents, helping plan proactive care
+              and interventions.
             </p>
             <div class="project-meta">
               <div class="project-tags">
                 <span class="tag">Python</span>
                 <span class="tag">Pandas</span>
-                <span class="tag">ML (Logistic Regression)</span>
+                <span class="tag">Logistic Regression</span>
               </div>
               <span>2024</span>
             </div>
           </article>
 
           <article class="project-card">
-            <h3 class="project-title">
-              Retail Sales & Profit Dashboard
-            </h3>
+            <h3 class="project-title">Retail Sales & Profit Dashboard</h3>
             <p class="project-desc">
-              Designed an interactive dashboard showing sales, profit, and
-              customer metrics by region, category, and time period, allowing
-              managers to quickly identify high-value segments and under-performing
-              product lines.
+              Created an interactive dashboard showing sales, profit, and
+              customer metrics by region, category, and month. Helped identify
+              high-value segments and under-performing product lines for
+              targeted action.
             </p>
             <div class="project-meta">
               <div class="project-tags">
@@ -765,18 +658,16 @@
           </article>
 
           <article class="project-card">
-            <h3 class="project-title">
-              SQL Reporting & Data Modelling Case Study
-            </h3>
+            <h3 class="project-title">SQL Reporting Case Study</h3>
             <p class="project-desc">
-              Created a small relational schema for orders, customers, and
-              products, then wrote advanced SQL queries (CTEs, window
-              functions, cohort and monthly revenue analysis) to answer common
-              business questions.
+              Designed a small relational schema for customers, orders, and
+              products, then wrote SQL queries (joins, CTEs, window functions)
+              to answer business questions like monthly revenue, top customers,
+              and churn indicators.
             </p>
             <div class="project-meta">
               <div class="project-tags">
-                <span class="tag">PostgreSQL / MySQL</span>
+                <span class="tag">SQL</span>
                 <span class="tag">CTEs & Window Functions</span>
               </div>
               <span>2023</span>
@@ -789,15 +680,15 @@
             </h3>
             <p class="project-desc">
               Contributed to a drag-and-drop Web3 editor by documenting user
-              flows, analysing how creators interacted with templates and
-              components, and suggesting UI improvements to make publishing
-              easier.
+              flows, understanding how creators interacted with templates and
+              modules, and suggesting UI refinements to make publishing more
+              intuitive.
             </p>
             <div class="project-meta">
               <div class="project-tags">
                 <span class="tag">UI/UX</span>
                 <span class="tag">Product Analytics</span>
-                <span class="tag">React Environment</span>
+                <span class="tag">React environment</span>
               </div>
               <span>2024</span>
             </div>
@@ -810,8 +701,8 @@
             <p class="project-desc">
               Applied statistical modelling, machine learning, and data
               visualisation to structured and unstructured datasets as part of
-              my Master’s, with a focus on clear documentation and reproducible
-              analysis.
+              my Master’s degree, with a focus on clear documentation and
+              reproducible analysis.
             </p>
             <div class="project-meta">
               <div class="project-tags">
@@ -829,73 +720,64 @@
         <div class="section-header">
           <h2 class="section-title">Experience & Education</h2>
           <p class="section-subtitle">
-            Blending hands-on care, digital products, and formal analytics training.
+            Combining front-line care, digital products, and formal analytics training.
           </p>
         </div>
 
         <div class="timeline">
           <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-role">
-                Front-End / Data Intern – Culture Vault
-              </div>
-              <div class="timeline-meta">
-                2024–2025 · Web3 / Digital Product · Remote / Hybrid
-              </div>
-              <ul class="timeline-list">
-                <li>
-                  Supported a React-based drag-and-drop editor for Web3
-                  experiences, helping document components and user journeys.
-                </li>
-                <li>
-                  Collaborated on analytics ideas to understand how creators
-                  interact with templates, modules, and publishing flows.
-                </li>
-              </ul>
+            <div class="timeline-role">
+              Front-End / Data Intern – Culture Vault
             </div>
+            <div class="timeline-meta">
+              2024–2025 · Web3 / Digital Product · Remote / Hybrid
+            </div>
+            <ul class="timeline-list">
+              <li>
+                Supported a React-based drag-and-drop editor by documenting
+                components and user journeys.
+              </li>
+              <li>
+                Collaborated on analytics ideas to understand how creators
+                interacted with templates and modules.
+              </li>
+            </ul>
           </div>
 
           <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-role">
-                Assistant in Nursing / Personal Carer – Harbison Aged Care
-              </div>
-              <div class="timeline-meta">
-                2023–Present · Moss Vale / Burradoo, NSW
-              </div>
-              <ul class="timeline-list">
-                <li>
-                  Worked closely with residents and clinical teams, gaining
-                  insight into staffing patterns, resident needs, and workflow
-                  challenges in aged-care.
-                </li>
-                <li>
-                  Developed a strong appreciation for accurate documentation,
-                  compliance, and how data supports safe, person-centred care.
-                </li>
-              </ul>
+            <div class="timeline-role">
+              Assistant in Nursing / Personal Carer – Harbison Aged Care
             </div>
+            <div class="timeline-meta">
+              2023–Present · Moss Vale / Burradoo, NSW
+            </div>
+            <ul class="timeline-list">
+              <li>
+                Worked closely with residents and clinical teams, gaining
+                insight into staffing patterns, resident needs, and workflow
+                challenges in aged-care.
+              </li>
+              <li>
+                Developed a strong appreciation for accurate documentation,
+                compliance, and how data supports safe, person-centred care.
+              </li>
+            </ul>
           </div>
 
           <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-role">
-                Master of Data Science – Charles Darwin University
-              </div>
-              <div class="timeline-meta">
-                Completed · Australia
-              </div>
-              <ul class="timeline-list">
-                <li>
-                  Focus on data analysis, machine learning, databases, and
-                  applied projects, with an emphasis on ethical and secure
-                  data handling.
-                </li>
-              </ul>
+            <div class="timeline-role">
+              Master of Data Science – Charles Darwin University
             </div>
+            <div class="timeline-meta">
+              Completed · Australia
+            </div>
+            <ul class="timeline-list">
+              <li>
+                Focused on data analysis, machine learning, databases, and
+                applied projects, with an emphasis on ethical and secure
+                data handling.
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -904,3 +786,84 @@
       <section id="contact">
         <div class="section-header">
           <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">
+            I’m happy to share more detail on any project or discuss potential roles.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div>
+            <div class="contact-item">
+              <div class="contact-label">Location</div>
+              <div class="contact-value">
+                Moss Vale, NSW · Open to roles across Australia
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-label">Email</div>
+              <div class="contact-value">
+                <a href="mailto:your.email@example.com">
+                  your.email@example.com
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">
+                <a href="https://www.linkedin.com" target="_blank">
+                  linkedin.com/in/your-profile
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-label">GitHub</div>
+              <div class="contact-value">
+                <a href="https://github.com" target="_blank">
+                  github.com/your-github
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p>
+              If you’d like to explore how I could support your team with
+              analytics, reporting, or process improvement, please feel free
+              to get in touch. I’m particularly interested in roles where I can
+              work closely with stakeholders and see the impact of data on
+              day-to-day operations.
+            </p>
+            <div class="social-row">
+              <span class="social-pill">Open to remote / hybrid roles</span>
+              <span class="social-pill">Regional NSW based</span>
+              <span class="social-pill">Data / Business / Reporting Analyst</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Manisha K.C · Data & Business Analyst
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Smooth scroll helper
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      window.scrollTo({
+        top: el.getBoundingClientRect().top + window.scrollY - 20,
+        behavior: "smooth",
+      });
+    }
+    // Set current year
+    document.getElementById("year").textContent =
+      new Date().getFullYear().toString();
+  </script>
+</body>
+</html>
