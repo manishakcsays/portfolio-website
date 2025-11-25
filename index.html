@@ -2,13 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Dresses Listing</title>
+  <title>Manisha K.C | Data & Business Analyst</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
+  <meta
+    name="description"
+    content="Portfolio of Manisha K.C - Data & Business Analyst based in NSW, Australia. I design data workflows, dashboards, and insights that help teams make better decisions."
   />
   <style>
+    :root {
+      --bg: #f5f5fb;
+      --bg-alt: #ffffff;
+      --bg-soft: #f9fafb;
+      --accent: #2563eb;
+      --accent-2: #0ea5e9;
+      --accent-soft: rgba(37, 99, 235, 0.08);
+      --accent-soft-2: rgba(14, 165, 233, 0.08);
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --shadow-soft: 0 22px 40px rgba(15, 23, 42, 0.13);
+      --shadow-card: 0 14px 30px rgba(15, 23, 42, 0.08);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -16,554 +33,643 @@
     }
 
     body {
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      background: #ffffff;
-      color: #000;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #e0edff 0, #f9fafb 52%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
-      color: inherit;
+      color: var(--accent);
       text-decoration: none;
     }
 
+    a:hover {
+      text-decoration: underline;
+    }
+
     .page {
-      max-width: 1440px;
+      max-width: 1120px;
       margin: 0 auto;
+      padding: 22px 18px 56px;
     }
 
-    /* ---------- TOP NAV (black stripe + white band + black band) ---------- */
+    /* NAVBAR */
 
-    .top-bar-black {
-      background: #201d1d;
-      height: 40px;
-    }
-
-    .top-bar-white {
-      background: #ffffff;
+    header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 20px 32px;
-    }
-
-    .logo {
-      width: 80px;
-      height: 40px;
-      background: #d9d9d9;
-      border-radius: 5px;
-    }
-
-    .top-icons {
-      display: flex;
-      gap: 16px;
       align-items: center;
-      font-size: 14px;
-      color: #212121;
+      margin-bottom: 26px;
+      gap: 16px;
     }
 
-    .top-icons span {
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #2563eb, #38bdf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #eff6ff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 22px rgba(37, 99, 235, 0.4);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      font-size: 0.95rem;
+    }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.88rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      padding: 4px 0;
+      border-bottom: 1px solid transparent;
+    }
+
+    nav a:hover {
+      color: var(--text-main);
+      border-color: #dbeafe;
+    }
+
+    .btn-small {
+      border-radius: 999px;
+      padding: 7px 13px;
+      border: none;
+      background: linear-gradient(135deg, #2563eb, #38bdf8);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      cursor: pointer;
+      box-shadow: 0 10px 26px rgba(37, 99, 235, 0.35);
     }
 
-    .nav-black {
-      background: #201d1d;
-      padding: 16px 32px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .btn-small:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 13px 32px rgba(37, 99, 235, 0.45);
     }
 
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      color: #ffffff;
-      font-size: 20px;
-      font-weight: 500;
+    /* HERO */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 26px;
+      align-items: stretch;
+      margin-bottom: 30px;
     }
 
-    .nav-search-wrap {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 8px;
+    .hero-left {
+      background: var(--bg-alt);
+      border-radius: var(--radius-xl);
+      padding: 24px 22px 22px;
+      border: 1px solid #e3ebff;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
     }
 
-    .nav-search {
-      border-bottom: 2px solid #ffffff;
-      padding: 4px 0;
-      display: flex;
+    .hero-pill {
+      display: inline-flex;
       align-items: center;
       gap: 8px;
-      width: 260px;
-      color: #ffffff;
-      font-size: 14px;
-    }
-
-    .nav-search input {
-      flex: 1;
-      border: none;
-      background: transparent;
-      color: #ffffff;
-      font: inherit;
-    }
-
-    .nav-search input::placeholder {
-      color: #ffffff;
-    }
-
-    .nav-search input:focus {
-      outline: none;
-    }
-
-    /* ---------- BREADCRUMB + TITLE + COPY ---------- */
-
-    .breadcrumb {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 24px 8px 0;
-      font-size: 12px;
-      color: #595656;
-    }
-
-    .breadcrumb span.current {
-      color: #000000;
-      font-weight: 400;
-    }
-
-    .breadcrumb .sep {
-      color: #595656;
-    }
-
-    .listing-heading {
-      text-align: center;
-      max-width: 820px;
-      margin: 18px auto 16px;
-    }
-
-    .listing-heading h1 {
-      font-size: 24px;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .listing-heading p {
-      font-size: 16px;
-      line-height: 1.5;
-      color: #565656;
-    }
-
-    /* ---------- FILTER STRIP (grey background) ---------- */
-
-    .filters-strip {
-      background: #f4f4f4;
-      padding: 24px 8px 24px;
-      border-top: 1px solid #828282;
-      margin-top: 16px;
-    }
-
-    .filters-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: #eff4ff;
+      border: 1px solid #d0e2ff;
+      color: #1d4ed8;
+      font-size: 0.78rem;
       margin-bottom: 12px;
     }
 
-    .filters-left-label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 20px;
-      font-weight: 600;
-      text-transform: uppercase;
+    .hero-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
     }
 
-    .filters-left-label-icon {
-      width: 24px;
-      height: 24px;
-      background: #000000;
-    }
-
-    .filters-chips-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-      max-width: 1192px;
-    }
-
-    .chip {
-      background: #d1d1d1;
-      border-radius: 4px;
-      padding: 3px 8px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #4f4f4f;
-    }
-
-    .chip.active {
-      background: #000000;
-      color: #ffffff;
-    }
-
-    .sort-group {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .select-box {
-      border: 1px solid #9b9b9b;
-      background: #ffffff;
-      height: 44px;
-      display: inline-flex;
-      align-items: center;
-      padding: 0 16px;
-      gap: 12px;
-      font-size: 20px;
-    }
-
-    .select-label {
-      font-weight: 600;
-    }
-
-    .select-value {
-      font-weight: 400;
-    }
-
-    .select-arrow {
-      margin-left: auto;
-      width: 12px;
-      height: 8px;
-      background: #000000;
-      clip-path: polygon(50% 100%, 0 0, 100% 0);
-    }
-
-    .show-options {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 20px;
-    }
-
-    .show-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2px 8px;
-      background: #ebebeb;
-      font-size: 16px;
-      min-width: 36px;
-      height: 28px;
-    }
-
-    .show-num.active {
-      background: #d9d9d9;
-      border: 1px solid #000000;
-      font-weight: 600;
-    }
-
-    /* ---------- PRODUCT LISTING GRID ---------- */
-
-    .listing-layout {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 16px;
-      padding: 16px 8px 40px;
-    }
-
-    .sidebar-placeholder {
-      /* you can add real filters here later */
-      min-height: 300px;
-      border-right: 1px solid #f0f0f0;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .product-card {
-      border: 1px solid #efefef;
-      background: #ffffff;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .product-image-wrap {
-      position: relative;
-      height: 480px;
-      background: #f2f2f2 url("image.png") center/cover no-repeat;
-    }
-
-    .badge {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 33px;
-      background: #000000;
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .product-info {
-      background: #fbfbfb;
-      padding: 16px 20px 16px;
-    }
-
-    .product-name {
-      font-size: 16px;
-      font-weight: 500;
+    .hero-title {
+      font-size: 2.05rem;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.02em;
       margin-bottom: 8px;
     }
 
-    .product-prices {
+    .hero-highlight {
+      background: linear-gradient(135deg, #2563eb, #0ea5e9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .hero-buttons {
       display: flex;
-      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      padding: 9px 16px;
+      border: none;
+      background: linear-gradient(135deg, #2563eb, #38bdf8);
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.4);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 9px 15px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      color: var(--text-main);
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.1s ease, border-color 0.1s ease,
+        transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .btn-ghost:hover {
+      background: #eff4ff;
+      border-color: #cbd5f5;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
       gap: 12px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 6px;
     }
 
-    .price-main {
-      font-size: 20px;
-      font-weight: 600;
-      color: #c8232c;
+    .hero-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f9fafb;
+      border: 1px solid #e2e8f0;
     }
 
-    .price-old {
-      font-size: 14px;
-      text-decoration: line-through;
+    .hero-right {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    /* ---------- PAGINATION BAR ---------- */
+    .video-card {
+      flex: 1;
+      background: radial-gradient(circle at top left, #dbeafe 0, #0f172a 70%);
+      border-radius: var(--radius-xl);
+      padding: 14px 14px 12px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      border: 1px solid #d0e2ff;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
-    .pagination-bar {
+    .video-card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 24px 32px 40px;
-      font-size: 20px;
+      color: #e5edff;
+      font-size: 0.85rem;
     }
 
-    .pagination-pages {
-      display: flex;
-      gap: 4px;
-      align-items: center;
-    }
-
-    .page-box {
-      width: 44px;
-      height: 44px;
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .video-card-title {
       font-weight: 600;
-      cursor: pointer;
     }
 
-    .page-box.active {
-      background: #000000;
-      color: #ffffff;
+    .video-card-tag {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(191, 219, 254, 0.6);
+      font-size: 0.75rem;
     }
 
-    .page-box.inactive {
-      background: #e9e9e9;
-      color: #000000;
+    .video-card-subtitle {
+      font-size: 0.8rem;
+      color: #c7d2fe;
     }
 
-    .pagination-next {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 20px;
+    .video-frame {
+      margin-top: 6px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(15, 23, 42, 0.6);
+      background: #020617;
     }
 
-    .arrow-right {
-      width: 8px;
-      height: 16px;
-      border-right: 1px solid #000;
-      border-bottom: 1px solid #000;
-      transform: rotate(-45deg);
+    .video-frame video,
+    .video-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
-    /* ---------- FOOTER ---------- */
-
-    .footer {
-      border: 1px solid #000000;
-      border-radius: 10px 10px 0 0;
-      padding: 32px;
-      margin: 0 0 40px;
-      position: relative;
+    .video-note {
+      font-size: 0.75rem;
+      color: #cbd5f5;
+      margin-top: 4px;
     }
 
-    .footer-grid-top {
+    .mini-metrics {
       display: grid;
-      grid-template-columns: 1.2fr 1.2fr 1.2fr 1.6fr;
-      gap: 32px;
-      margin-bottom: 24px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
     }
 
-    .footer-title {
-      font-size: 14px;
-      font-weight: 700;
+    .metric-card {
+      background: var(--bg-alt);
+      border-radius: 14px;
+      padding: 8px 9px;
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow-card);
+      font-size: 0.78rem;
+    }
+
+    .metric-label {
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .metric-value {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* SECTIONS */
+
+    section {
+      background: var(--bg-alt);
+      border-radius: var(--radius-xl);
+      padding: 18px 18px 16px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      margin-bottom: 18px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 10px;
       margin-bottom: 10px;
     }
 
-    .footer-subtitle {
-      font-size: 14px;
+    .section-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    .section-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* WORKFLOW */
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      font-size: 0.86rem;
+    }
+
+    .workflow-step {
+      border-radius: 16px;
+      padding: 10px 10px 9px;
+      background: #f9fafb;
+      border: 1px solid #e2e8f0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .workflow-step:nth-child(1) {
+      border-left: 3px solid #2563eb;
+    }
+    .workflow-step:nth-child(2) {
+      border-left: 3px solid #0ea5e9;
+    }
+    .workflow-step:nth-child(3) {
+      border-left: 3px solid #22c55e;
+    }
+    .workflow-step:nth-child(4) {
+      border-left: 3px solid #f97316;
+    }
+
+    .workflow-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      margin-bottom: 4px;
+    }
+
+    .workflow-title {
+      font-size: 0.9rem;
       font-weight: 600;
       margin-bottom: 4px;
     }
 
-    .footer-text {
-      font-size: 14px;
-      font-weight: 500;
-      margin-bottom: 4px;
+    .workflow-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
     }
 
-    .footer-links-col .footer-text {
-      cursor: pointer;
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      font-size: 0.86rem;
     }
 
-    .footer-hours .footer-text {
-      margin-bottom: 4px;
-    }
-
-    .footer-newsletter {
-      margin-top: 8px;
-    }
-
-    .newsletter-input-row {
+    .project-card {
+      border-radius: 16px;
+      padding: 11px 11px 10px;
+      background: #f9fafb;
+      border: 1px solid #e2e8f0;
       display: flex;
-      margin-top: 8px;
+      flex-direction: column;
+      gap: 6px;
     }
 
-    .newsletter-input {
-      flex: 1;
-      border: 1px solid #726f6f;
-      border-radius: 5px 0 0 5px;
-      padding: 8px;
-      font-size: 14px;
-    }
-
-    .newsletter-btn {
-      padding: 8px 16px;
-      border-radius: 0 5px 5px 0;
-      border: none;
-      background: #1e1b1b;
-      color: #ffffff;
-      font-size: 14px;
+    .project-title {
+      font-size: 0.92rem;
       font-weight: 600;
-      cursor: pointer;
     }
 
-    .footer-middle-line {
-      border-top: 1px solid #030202;
-      margin: 16px 0;
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.82rem;
     }
 
-    .footer-payment-row,
-    .footer-social-row {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .payment-logo,
-    .social-logo {
-      width: 74px;
-      height: 51px;
-      border-radius: 4px;
-      background: #d9d9d9 url("image.png") center/cover no-repeat;
-    }
-
-    .footer-bottom-line {
-      border-top: 1px solid #100d0d;
-      margin: 16px 0;
-    }
-
-    .footer-bottom-row {
+    .project-meta {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .project-tags {
+      display: flex;
       flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tag {
+      padding: 2px 7px;
+      border-radius: 999px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* EXPERIENCE */
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 16px;
-      font-size: 14px;
+      font-size: 0.86rem;
     }
 
-    .footer-bottom-links {
+    .timeline {
+      display: grid;
+      gap: 9px;
+    }
+
+    .timeline-item + .timeline-item {
+      border-top: 1px dashed #e2e8f0;
+      padding-top: 7px;
+    }
+
+    .timeline-role {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .timeline-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+
+    .timeline-list {
+      margin-left: 14px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .timeline-list li + li {
+      margin-top: 3px;
+    }
+
+    .edu-card {
+      border-radius: 16px;
+      background: #f9fafb;
+      border: 1px solid #e2e8f0;
+      padding: 11px 11px 10px;
+      font-size: 0.86rem;
+    }
+
+    .edu-title {
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .edu-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+
+    /* TOOLS */
+
+    .tools-grid {
       display: flex;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.8rem;
     }
 
-    .footer-bottom-links span {
-      font-weight: 600;
+    .tool-pill {
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      color: var(--text-muted);
     }
 
-    .footer-copy {
-      font-size: 16px;
-      font-weight: 600;
-      color: #afafaf;
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 16px;
+      font-size: 0.88rem;
     }
 
-    .footer-social-small {
+    .contact-item {
+      margin-bottom: 7px;
+    }
+
+    .contact-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    .contact-value {
+      font-weight: 500;
+    }
+
+    .social-row {
       display: flex;
-      gap: 30px;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+      font-size: 0.8rem;
     }
 
-    .footer-social-small .social-logo {
-      width: 45px;
-      height: 40px;
+    .social-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      color: var(--text-muted);
     }
 
-    /* ---------- RESPONSIVE QUICK PASS ---------- */
+    footer {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
 
-    @media (max-width: 1024px) {
-      .products-grid {
+    /* RESPONSIVE */
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .projects-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      .listing-layout {
-        grid-template-columns: 1fr;
-      }
-      .sidebar-placeholder {
-        display: none;
-      }
-      .filters-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-      .pagination-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-      .footer-grid-top {
-        grid-template-columns: 1fr 1fr;
+
+      .workflow-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 768px) {
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 16px;
+    @media (max-width: 640px) {
+      .page {
+        padding: 18px 12px 40px;
       }
-      .products-grid {
+
+      nav {
+        flex-wrap: wrap;
+      }
+
+      .projects-grid {
         grid-template-columns: 1fr;
       }
-      .footer-grid-top {
+
+      .workflow-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -571,272 +677,445 @@
 </head>
 <body>
   <div class="page">
-    <!-- Top stacked header bars -->
-    <div class="top-bar-black"></div>
-
-    <div class="top-bar-white">
-      <div class="logo"></div>
-
-      <div class="top-icons">
-        <span>❤️ My Wishlist</span>
-        <span>🛍 My Cart</span>
-        <span>👤 Account</span>
-      </div>
-    </div>
-
-    <div class="nav-black">
-      <div class="nav-links">
-        <a href="#">New In</a>
-        <a href="#">Clothing</a>
-        <a href="#">Dresses</a>
-        <a href="#">Sale</a>
-        <a href="#">Swim Wear</a>
-      </div>
-      <div class="nav-search-wrap">
-        <div class="nav-search">
-          <input type="text" placeholder="search...." />
-          🔍
+    <!-- NAVBAR -->
+    <header>
+      <div class="brand">
+        <div class="brand-logo">MK</div>
+        <div class="brand-text">
+          <div class="brand-name">Manisha K.C</div>
+          <div class="brand-sub">Data & Business Analyst · NSW, Australia</div>
         </div>
       </div>
-    </div>
+      <nav>
+        <a href="#workflow">Workflow</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <!-- Update this link when you upload your CV PDF -->
+        <button class="btn-small" onclick="window.location.href='Manisha_KC_CV.pdf'">
+          Download CV
+        </button>
+      </nav>
+    </header>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-      <span>HOME</span>
-      <span class="sep">&gt;</span>
-      <span>NEW IN</span>
-      <span class="sep">&gt;</span>
-      <span class="current">DRESSES</span>
-    </div>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <div class="hero-pill">
+          <span class="hero-pill-dot"></span>
+          Open to Data / Business Analyst roles in Australia
+        </div>
+        <h1 class="hero-title">
+          I design <span class="hero-highlight">data workflows</span> that
+          connect dashboards to real decisions.
+        </h1>
+        <p class="hero-subtitle">
+          I’m <strong>Manisha</strong>, a Data & Business Analyst with a
+          Master’s in Data Science, based in regional NSW. I help teams
+          transform raw data into clear workflows, reports, and dashboards that
+          support better decisions in <strong>aged-care</strong> and
+          <strong>digital products</strong>.
+        </p>
 
-    <!-- Title + description -->
-    <div class="listing-heading">
-      <h1>DRESSES</h1>
-      <p>
-        Our must-have collection of women’s dresses takes inspiration straight
-        from the catwalk. Right now we’re looking at longer sleeves, layering
-        and getting a bit of glam into our wardrobes.
-      </p>
-    </div>
-
-    <!-- Filters strip -->
-    <section class="filters-strip">
-      <div class="filters-top">
-        <div class="filters-left-label">
-          <div class="filters-left-label-icon"></div>
-          <span>filters</span>
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="scrollToId('projects')">
+            View featured projects →
+          </button>
+          <button class="btn-ghost" onclick="scrollToId('workflow')">
+            See how I work
+          </button>
         </div>
 
-        <div class="sort-group">
-          <div class="select-box">
-            <span class="select-label">Sort By:</span>
-            <span class="select-value">Newest Items</span>
-            <div class="select-arrow"></div>
-          </div>
-          <div class="select-box" style="width:200px;">
-            <span class="select-label">Colour</span>
-            <div class="select-arrow"></div>
-          </div>
-          <div class="select-box" style="width:322px;">
-            <span class="select-label">Price Range</span>
-            <div class="select-arrow"></div>
-          </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item">📍 Moss Vale, NSW · Regional Australia</div>
+          <div class="hero-meta-item">🎓 Master of Data Science – CDU</div>
+          <div class="hero-meta-item">🧠 SQL · Power BI · Python</div>
         </div>
       </div>
 
-      <div class="filters-chips-row">
-        <div class="chip">Summer Dresses</div>
-        <div class="chip active">Party Dresses</div>
-        <div class="chip">Summer Dresses</div>
-        <div class="chip">Mini Dresses</div>
-        <div class="chip">Bodycon Dresses</div>
-        <div class="chip">Summer Dresses</div>
-        <div class="chip">Maxi Dresses</div>
-        <div class="chip">Evening Dresses</div>
-        <div class="chip">Summer Dresses</div>
-      </div>
+      <div class="hero-right">
+        <!-- VIDEO / GIF PREVIEW -->
+        <div class="video-card">
+          <div class="video-card-header">
+            <div class="video-card-title">Portfolio Preview</div>
+            <div class="video-card-tag">Dashboards & Workflows</div>
+          </div>
+          <div class="video-card-subtitle">
+            A short preview of the dashboards and analysis workflows I’ve
+            built. Replace this with your own video or GIF.
+          </div>
+          <div class="video-frame">
+            <!-- OPTION 1: use a video (upload intro.mp4 to the repo root) -->
+            <video src="intro.mp4" autoplay muted loop controls playsinline>
+              Your browser does not support the video tag.
+            </video>
 
-      <div class="filters-top" style="margin-top:16px;">
-        <div></div>
-        <div class="show-options">
-          <span>Show</span>
-          <span class="show-num">10</span>
-          <span class="show-num">20</span>
-          <span class="show-num active">30</span>
-          <span class="show-num">40</span>
-          <span class="show-num">50</span>
+            <!-- OPTION 2: if you prefer a GIF, comment out the video and use:
+            <img src="intro.gif" alt="Portfolio preview" />
+            -->
+          </div>
+          <div class="video-note">
+            Tip: record your screen while interacting with your dashboards,
+            export as MP4 or GIF, and name it <code>intro.mp4</code> or
+            <code>intro.gif</code>.
+          </div>
+        </div>
+
+        <!-- MINI METRICS -->
+        <div class="mini-metrics">
+          <div class="metric-card">
+            <div class="metric-label">Tools</div>
+            <div class="metric-value">Power BI · SQL</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Domains</div>
+            <div class="metric-value">Aged-care · Ops</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Focus</div>
+            <div class="metric-value">Workforce & KPIs</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Listing layout: sidebar + products -->
-    <section class="listing-layout">
-      <aside class="sidebar-placeholder">
-        <!-- You can add faceted filters here if you want -->
-      </aside>
-
-      <div>
-        <div class="products-grid">
-          <!-- Product 1 with BEST SELLING badge -->
-          <article class="product-card">
-            <div class="product-image-wrap">
-              <div class="badge">BEST SELLING</div>
-            </div>
-            <div class="product-info">
-              <div class="product-name">Mono Zigzag Printed Midi Dress</div>
-              <div class="product-prices">
-                <span class="price-main">£18.00</span>
-                <span class="price-old">£23.60</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- You can duplicate this card as many times as needed -->
-          <article class="product-card">
-            <div class="product-image-wrap"></div>
-            <div class="product-info">
-              <div class="product-name">Mono Zigzag Printed Midi Dress</div>
-              <div class="product-prices">
-                <span class="price-main">£18.00</span>
-                <span class="price-old">£23.60</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image-wrap"></div>
-            <div class="product-info">
-              <div class="product-name">Mono Zigzag Printed Midi Dress</div>
-              <div class="product-prices">
-                <span class="price-main">£18.00</span>
-                <span class="price-old">£23.60</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image-wrap"></div>
-            <div class="product-info">
-              <div class="product-name">Mono Zigzag Printed Midi Dress</div>
-              <div class="product-prices">
-                <span class="price-main">£18.00</span>
-                <span class="price-old">£23.60</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Repeat rows as needed to mimic your Figma -->
-        </div>
+    <!-- WORKFLOW -->
+    <section id="workflow">
+      <div class="section-header">
+        <h2 class="section-title">Workflow</h2>
+        <p class="section-subtitle">
+          From messy data to decisions – how I typically structure an analytics project.
+        </p>
       </div>
-    </section>
-
-    <!-- Pagination / info bar -->
-    <section class="pagination-bar">
-      <div>1 of 3 Pages</div>
-
-      <div class="pagination-pages">
-        <div class="page-box active">1</div>
-        <div class="page-box inactive">2</div>
-        <div class="page-box inactive">3</div>
-      </div>
-
-      <div class="pagination-next">
-        <span>NEXT</span>
-        <div class="arrow-right"></div>
-      </div>
-
-      <div>30 Items Left</div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-grid-top">
-        <div class="footer-hours">
-          <div class="footer-title">Need Help</div>
-          <div class="footer-text">Mon - Fri : 9 : 00 am to 6 : 00 pm</div>
-          <div class="footer-text">Saturday : 11 :00 am to 6:00 pm</div>
-          <div class="footer-subtitle" style="margin-top:14px;">
-            info@company.com
+      <div class="workflow-grid">
+        <div class="workflow-step">
+          <div class="workflow-label">01 · Discover</div>
+          <div class="workflow-title">Understand the question</div>
+          <div class="workflow-desc">
+            Clarify stakeholders, goals, constraints, and what “success” looks
+            like. Translate business questions into data questions.
           </div>
         </div>
-
-        <div class="footer-links-col">
-          <div class="footer-title">Navigate</div>
-          <div class="footer-subtitle">Home Page</div>
-          <div class="footer-subtitle">Our Ethics</div>
-          <div class="footer-subtitle">Return &amp; Refund</div>
-          <div class="footer-subtitle">Press</div>
-          <div class="footer-subtitle">Shipping &amp; Return</div>
+        <div class="workflow-step">
+          <div class="workflow-label">02 · Prepare</div>
+          <div class="workflow-title">Shape the data</div>
+          <div class="workflow-desc">
+            Clean, join, and validate data using SQL / Python. Make sure the
+            dataset is trustworthy before visualising or modelling.
+          </div>
         </div>
+        <div class="workflow-step">
+          <div class="workflow-label">03 · Analyse</div>
+          <div class="workflow-title">Explore and model</div>
+          <div class="workflow-desc">
+            Use descriptive stats, visuals, and where appropriate,
+            machine learning to surface patterns, risks, and opportunities.
+          </div>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-label">04 · Share</div>
+          <div class="workflow-title">Tell the story</div>
+          <div class="workflow-desc">
+            Build dashboards, summaries, and recommendations that non-technical
+            teams can act on, focusing on clarity and next steps.
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="footer-links-col">
-          <div class="footer-title">Categories</div>
-          <div class="footer-subtitle">New In</div>
-          <div class="footer-subtitle">Clothing</div>
-          <div class="footer-subtitle">Dresses</div>
-          <div class="footer-subtitle">Sale</div>
-          <div class="footer-subtitle">Trending</div>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">
+          A snapshot of the kind of work I enjoy doing.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3 class="project-title">
+            Aged-Care Workforce Analytics Dashboard
+          </h3>
+          <p class="project-desc">
+            Power BI dashboard exploring staff-to-resident ratios, overtime,
+            absenteeism, and cost trends. Designed to support more sustainable
+            rostering decisions and transparent reporting.
+          </p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="tag">Power BI</span>
+              <span class="tag">Workforce Analytics</span>
+              <span class="tag">Aged-care</span>
+            </div>
+            <span>2024</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3 class="project-title">
+            Resident Falls & Incident Risk Modelling
+          </h3>
+          <p class="project-desc">
+            Cleaned and analysed simulated resident data in Python and trained a
+            logistic regression model to flag higher-risk residents, supporting
+            proactive care planning and risk management.
+          </p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">Logistic Regression</span>
+            </div>
+            <span>2024</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3 class="project-title">Retail Sales & Profit Dashboard</h3>
+          <p class="project-desc">
+            Interactive dashboard showing sales, profit, and customer metrics
+            by region, category, and month. Helps managers quickly identify
+            high-value segments and under-performing products.
+          </p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="tag">Power BI / Tableau</span>
+              <span class="tag">Sales Analytics</span>
+            </div>
+            <span>2023</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3 class="project-title">SQL Reporting Case Study</h3>
+          <p class="project-desc">
+            Designed a small relational schema and wrote SQL queries (joins,
+            CTEs, window functions) to answer questions like monthly revenue,
+            top customers, and churn indicators.
+          </p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="tag">SQL</span>
+              <span class="tag">CTEs & Window Functions</span>
+            </div>
+            <span>2023</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3 class="project-title">
+            Web3 Editor UI & Analytics (Internship)
+          </h3>
+          <p class="project-desc">
+            Contributed to a drag-and-drop Web3 editor by documenting user
+            flows, understanding how creators interact with templates, and
+            suggesting UI refinements to make publishing smoother.
+          </p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="tag">UI/UX</span>
+              <span class="tag">Product Analytics</span>
+              <span class="tag">React environment</span>
+            </div>
+            <span>2024</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3 class="project-title">
+            Academic & Capstone Work (M.Data Science)
+          </h3>
+          <p class="project-desc">
+            Applied statistical modelling, machine learning, and data
+            visualisation to structured and unstructured datasets as part of my
+            Master’s degree, with a focus on clear documentation and reproducible analysis.
+          </p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="tag">Data Science</span>
+              <span class="tag">Python</span>
+            </div>
+            <span>2022–2024</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-header">
+        <h2 class="section-title">Experience & Education</h2>
+        <p class="section-subtitle">
+          Combining front-line care, digital products, and formal analytics training.
+        </p>
+      </div>
+
+      <div class="experience-grid">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-role">
+              Front-End / Data Intern – Culture Vault
+            </div>
+            <div class="timeline-meta">
+              2024–2025 · Web3 / Digital Product · Remote / Hybrid
+            </div>
+            <ul class="timeline-list">
+              <li>
+                Supported a React-based drag-and-drop editor by documenting
+                components and user journeys.
+              </li>
+              <li>
+                Contributed to analytics ideas for understanding how creators
+                interact with templates and modules.
+              </li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-role">
+              Assistant in Nursing / Personal Carer – Harbison Aged Care
+            </div>
+            <div class="timeline-meta">
+              2023–Present · Moss Vale / Burradoo, NSW
+            </div>
+            <ul class="timeline-list">
+              <li>
+                Worked closely with residents and clinical teams, gaining
+                insight into staffing patterns, resident needs, and workflow
+                challenges in aged-care.
+              </li>
+              <li>
+                Developed an appreciation for accurate documentation, compliance,
+                and how data supports safe, person-centred care.
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div>
-          <div class="footer-title">Newsletter</div>
-          <div class="footer-text">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the indust standard dummy text ever
-            since
+          <div class="edu-card">
+            <div class="edu-title">
+              Master of Data Science – Charles Darwin University
+            </div>
+            <div class="edu-meta">
+              Completed · Australia
+            </div>
+            <p>
+              Focus on data analysis, machine learning, databases, and applied
+              projects, with an emphasis on ethical and secure data handling.
+              This underpins my work as a Data & Business Analyst.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLS -->
+    <section id="tools">
+      <div class="section-header">
+        <h2 class="section-title">Toolstack</h2>
+        <p class="section-subtitle">
+          Tools and platforms I’m comfortable using day-to-day.
+        </p>
+      </div>
+
+      <div class="tools-grid">
+        <span class="tool-pill">SQL (PostgreSQL / MySQL)</span>
+        <span class="tool-pill">Power BI</span>
+        <span class="tool-pill">Tableau</span>
+        <span class="tool-pill">Excel (Pivot Tables, Lookups)</span>
+        <span class="tool-pill">Python (Pandas, NumPy)</span>
+        <span class="tool-pill">Jupyter Notebook</span>
+        <span class="tool-pill">GitHub</span>
+        <span class="tool-pill">Jira & Confluence</span>
+        <span class="tool-pill">Basic UI/UX collaboration</span>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-header">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">
+          I’m happy to share more detail on any project or discuss potential roles.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <div class="contact-item">
+            <div class="contact-label">Location</div>
+            <div class="contact-value">
+              Moss Vale, NSW · Open to roles across Australia
+            </div>
           </div>
 
-          <div class="footer-newsletter">
-            <div class="newsletter-input-row">
-              <input
-                type="email"
-                class="newsletter-input"
-                placeholder="Email"
-              />
-              <button class="newsletter-btn">Subscribe</button>
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">
+              <!-- REPLACE with your real email -->
+              <a href="mailto:your.email@example.com">
+                your.email@example.com
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">
+              <!-- REPLACE with your real LinkedIn -->
+              <a href="https://www.linkedin.com" target="_blank">
+                linkedin.com/in/your-profile
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-label">GitHub</div>
+            <div class="contact-value">
+              <!-- REPLACE with your real GitHub -->
+              <a href="https://github.com" target="_blank">
+                github.com/your-github
+              </a>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="footer-middle-line"></div>
-
-      <div class="footer-payment-row">
-        <div class="payment-logo"></div>
-        <div class="payment-logo"></div>
-        <div class="payment-logo"></div>
-        <div class="payment-logo"></div>
-        <div class="payment-logo"></div>
-        <div class="payment-logo"></div>
-        <div class="payment-logo"></div>
-      </div>
-
-      <div class="footer-bottom-line"></div>
-
-      <div class="footer-bottom-row">
-        <div class="footer-copy">
-          Copyright @ Softbenzinfosys. All right Reserved
-        </div>
-
-        <div class="footer-bottom-links">
-          <span>About Us</span>
-          <span>Delivery Information</span>
-          <span>Privacy Policy</span>
-          <span>Sales</span>
-          <span>Terms &amp; Conditions</span>
-        </div>
-
-        <div class="footer-social-small">
-          <div class="social-logo"></div>
-          <div class="social-logo"></div>
-          <div class="social-logo"></div>
-          <div class="social-logo"></div>
-          <div class="social-logo"></div>
-          <div class="social-logo"></div>
+        <div>
+          <p>
+            If you’d like to explore how I could support your team with
+            analytics, reporting, or process improvement, feel free to get in
+            touch. I’m particularly interested in roles where I can work
+            closely with stakeholders and see the impact of data on day-to-day
+            operations.
+          </p>
+          <div class="social-row">
+            <span class="social-pill">Open to remote / hybrid roles</span>
+            <span class="social-pill">Regional NSW based</span>
+            <span class="social-pill">Data / Business / Reporting Analyst</span>
+          </div>
         </div>
       </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Manisha K.C · Data & Business Analyst
     </footer>
   </div>
+
+  <script>
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      window.scrollTo({
+        top: el.getBoundingClientRect().top + window.scrollY - 16,
+        behavior: "smooth",
+      });
+    }
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear().toString();
+  </script>
 </body>
 </html>
-
